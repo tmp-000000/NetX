@@ -1,0 +1,23 @@
+[build]
+jobs = 8
+
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw32-gcc"
+
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[alias]
+ba = "build --workspace --all-features"
+br = "build --workspace --all-features --release"
+c = "check --workspace --all-features"
+t = "test --workspace --all-features"
+cl = "clippy --workspace --all-features --all-targets"
+f = "fmt --all"
+rd = "run --bin netx-daemon"
+ru = "run --bin netx"
+rc = "run --bin netx-ctl --"

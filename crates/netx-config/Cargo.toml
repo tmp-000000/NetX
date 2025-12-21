@@ -1,0 +1,21 @@
+[package]
+name = "netx-config"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[package.metadata]
+description = "Configuration Management for NetX"
+
+[lib]
+name = "netx_config"
+path = "src/lib.rs"
+
+[dependencies]
+netx-core = { path = "../netx-core" }
+
+[lints]
+workspace = true

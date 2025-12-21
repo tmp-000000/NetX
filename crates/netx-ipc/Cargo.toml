@@ -1,0 +1,21 @@
+[package]
+name = "netx-ipc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[package.metadata]
+description = "IPC abstractions for communication between NetX components"
+
+[lib]
+name = "netx_ipc"
+path = "src/lib.rs"
+
+[dependencies]
+netx-core = { path = "../netx-core" }
+
+[lints]
+workspace = true

@@ -1,0 +1,32 @@
+[package]
+name = "netx-daemon"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[package.metadata]
+description = "Privileged system service for sing-box management"
+
+[[bin]]
+name = "netx-daemon"
+path = "src/main.rs"
+
+[dependencies]
+netx-core = { path = "../netx-core" }
+netx-ipc = { path = "../netx-ipc" }
+netx-config = { path = "../netx-config" }
+
+[features]
+default = []
+systemd = []
+windows-service = []
+
+[target.'cfg(target_os = "linux")'.dependencies]
+
+[target.'cfg(target_os = "windows")'.dependencies]
+
+[lints]
+workspace = true
